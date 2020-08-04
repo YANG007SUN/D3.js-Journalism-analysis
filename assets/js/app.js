@@ -244,56 +244,19 @@ d3.csv("assets/data/data.csv").then(function(healthDate,err) {
                 textGroup = renderText(textGroup, xLinearScale, chooseXAxis);
                 updateToolTip(chooseXAxis,chooseYAxis,circleGroup);
                 // changes classes to change bold text
-                if (chooseXAxis==="age" && chooseYAxis==="healthcare"){
+                if (chooseXAxis==="age"){
                     ageLabel
                     .classed("active", true)
                     .classed("inactive", false);
                     povertyLabel
                     .classed("active", false)
                     .classed("inactive", true);
-                    healthcareLabel
-                    .classed("active", true)
-                    .classed("inactive", false);
-                    smokeLabel
-                    .classed("inactive", true)
-                    .classed("active", false);
-                }else if (chooseXAxis==="age" && chooseYAxis==="smokes"){
-                    ageLabel
-                    .classed("active", true)
-                    .classed("inactive", false);
-                    povertyLabel
-                    .classed("active", false)
-                    .classed("inactive", true);
-                    healthcareLabel
-                    .classed("inactive", true)
-                    .classed("active", false);
-                    smokeLabel
-                    .classed("active", true)
-                    .classed("inactive", false);
-                }else if (chooseXAxis==="poverty" && chooseYAxis==="healthcare"){
+                }
+                else if (chooseXAxis==="poverty"){
                     ageLabel
                     .classed("active", false)
                     .classed("inactive", true);
                     povertyLabel
-                    .classed("active", true)
-                    .classed("inactive", false);
-                    healthcareLabel
-                    .classed("active", true)
-                    .classed("inactive", false);
-                    smokeLabel
-                    .classed("inactive", true)
-                    .classed("active", false); 
-                }else {
-                    ageLabel
-                    .classed("active", false)
-                    .classed("inactive", true);
-                    povertyLabel
-                    .classed("active", true)
-                    .classed("inactive", false);
-                    healthcareLabel
-                    .classed("inactive", true)
-                    .classed("active", false);
-                    smokeLabel
                     .classed("active", true)
                     .classed("inactive", false);
                 }
@@ -312,52 +275,14 @@ d3.csv("assets/data/data.csv").then(function(healthDate,err) {
             textGroup = renderYText(textGroup, yLinearScale, chooseYAxis);
             updateToolTip(chooseXAxis,chooseYAxis, circleGroup);
              // changes classes to change bold text
-             if (chooseXAxis==="age" && chooseYAxis==="healthcare"){
-                ageLabel
-                .classed("active", true)
-                .classed("inactive", false);
-                povertyLabel
-                .classed("active", false)
-                .classed("inactive", true);
+             if (chooseYAxis==="healthcare"){
                 healthcareLabel
                 .classed("active", true)
                 .classed("inactive", false);
                 smokeLabel
                 .classed("inactive", true)
                 .classed("active", false);
-            }else if (chooseXAxis==="age" && chooseYAxis==="smokes"){
-                ageLabel
-                .classed("active", true)
-                .classed("inactive", false);
-                povertyLabel
-                .classed("active", false)
-                .classed("inactive", true);
-                healthcareLabel
-                .classed("inactive", true)
-                .classed("active", false);
-                smokeLabel
-                .classed("active", true)
-                .classed("inactive", false);
-            }else if (chooseXAxis==="poverty" && chooseYAxis==="healthcare"){
-                ageLabel
-                .classed("active", false)
-                .classed("inactive", true);
-                povertyLabel
-                .classed("active", true)
-                .classed("inactive", false);
-                healthcareLabel
-                .classed("active", true)
-                .classed("inactive", false);
-                smokeLabel
-                .classed("inactive", true)
-                .classed("active", false); 
-            }else {
-                ageLabel
-                .classed("active", false)
-                .classed("inactive", true);
-                povertyLabel
-                .classed("active", true)
-                .classed("inactive", false);
+            }else if (chooseYAxis==="smokes"){
                 healthcareLabel
                 .classed("inactive", true)
                 .classed("active", false);
